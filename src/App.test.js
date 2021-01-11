@@ -1,5 +1,5 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
+import {  shallow } from "enzyme";
 import App from "./App";
 
 const setUp = (props = {}) => {
@@ -12,7 +12,7 @@ describe("App component", () => {
 
   beforeEach(() => {
     const usersData = [
-      { id: 1, title: "Todo 1", notes: "build CI/CD pipeline using jenkins" },
+      { id: 1, title: "Todo 1", notes: "Build CI/CD pipeline using jenkins" },
       { id: 2, title: "Todo 2", notes: "Integrate Jenkins with Sonarqube " },
       { id: 3, title: "Todo 3", notes: "Deploy to AWS S3" },
     ];
