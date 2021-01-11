@@ -54,12 +54,12 @@ describe("App component", () => {
 
 
   describe("App component when editing is true", () => {
-    test('setOpenIndex sets the open index state properly', () => {
-      const wrapper = mount(<App {...props} editing={false} />)
-      expect(wrapper.state('editing')).toBe(false)
-      wrapper.instance().setEditing(true)
-      expect(wrapper.state('editing')).toBe(true)
-    })
+    // test('setOpenIndex sets the open index state properly', () => {
+    //   const wrapper = mount(<App {...props} editing={false} />)
+    //   expect(wrapper.state('editing')).toBe(false)
+    //   wrapper.instance().setEditing(true)
+    //   expect(wrapper.state('editing')).toBe(true)
+    // })
 
   //   it("should handle editRow event", () => {
   //     const note = { id: 1 };
