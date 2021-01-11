@@ -17,11 +17,11 @@ describe("App component", () => {
       { id: 2, title: "Todo 2", notes: "Integrate Jenkins with Sonarqube " },
       { id: 3, title: "Todo 3", notes: "Deploy to AWS S3" },
     ];
-  
+
     props = {
       editRow: jest.fn(),
-      deleteNote:jest.fn(),
-      notes:usersData
+      deleteNote: jest.fn(),
+      notes: usersData,
     };
 
     wrappedComponent = setUp(props);
@@ -30,14 +30,12 @@ describe("App component", () => {
     expect(wrappedComponent).toMatchSnapshot();
   });
 
-  it('Test click event', () => {
-    const mockCallBack = jest.fn();
-
-    // const button = shallow((<Button onClick={mockCallBack}>Ok!</Button>));
-    const aa= wrappedComponent.find('i').at(0)
-    console.log(aa.debug())
-    // wrappedComponent.find('i').at(0).props().onClick() ;
-    // expect(mockCallBack.mock.calls.length).toEqual(1);
+  it("should handle deleteNote event", () => {
+    wrappedComponent.find("i").at(0).props().onClick();
+    expect(props.deleteNote).toHaveBeenCalled();
   });
-
+  it("should handle editNote event", () => {
+    wrappedComponent.find("i").at(1).props().onClick();
+    expect(props.editRow).toHaveBeenCalled();
+  });
 });

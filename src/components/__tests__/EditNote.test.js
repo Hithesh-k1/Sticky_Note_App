@@ -4,7 +4,7 @@ import EditNote from "../EditNote";
 
 const setUp = (props = {}) => {
   const wrappedComponent = shallow(<EditNote {...props} />);
-  return wrappedComponent
+  return wrappedComponent;
 };
 
 describe("App component", () => {
@@ -22,7 +22,8 @@ describe("App component", () => {
       editing: jest.fn(),
       setEditing: jest.fn(),
       currentNote: usersData,
-      updateNote:jest.fn()
+      updateNote: jest.fn(),
+      handleInputChange:jest.fn()
     };
 
     wrappedComponent = setUp(props);
@@ -30,4 +31,29 @@ describe("App component", () => {
   it("should match snapshot of EditNote Component", () => {
     expect(wrappedComponent).toMatchSnapshot();
   });
+
+  it("should handle setEditing event", () => {
+    wrappedComponent.find("button").at(1).props().onClick();
+    expect(props.setEditing).toHaveBeenCalled();
+  });
+
+  it("should handle updateNote event", () => {
+    let preventDefault = jest.fn();
+    const event = { preventDefault };
+    wrappedComponent.find("form").props().onSubmit(event);
+    expect(props.updateNote).toHaveBeenCalled();
+  });
+
+  // it("should handleInputChange event", () => {
+  //   const event = {
+  //     target: {
+  //       title: "test_title",
+  //       value: "test_value",
+  //     },
+  //   };
+  //   wrappedComponent.find("input").at(0).props().onChange(event);
+  //   expect(wrappedComponent.instance().state.title).toEqual("test_title");
+
+  //   // expect(props.handleInputChange).toHaveBeenCalled();
+  // });
 });

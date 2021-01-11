@@ -34,5 +34,20 @@ pipeline {
                 sh 'npm run build'
             }
         }
+
+        stage('Upload') {
+            steps {
+                echo 'Uploading...'
+                dir('/home/nineleaps/.jenkins/workspace/Sticky_Note_App/') {
+                    pwd() //Log current directory
+                    //credentials is the id name for
+                    withAWS(region:'us-east-2', credentials:'AWS_CREDENTIALS') {
+                        //  def identity=awsIdentity();//Log AWS credentials
+                        // Upload files from working directory 'dist' in your project workspace
+                        s3Upload(bucket:'sticky-note-app', workingDir:'build', includePathPattern:'**/*')
+                    }
+                }
+            }
+        }
     }
 }
