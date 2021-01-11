@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should match snapshot of AddNote Component 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="note"
+    key="null"
+  >
+    <center>
+      <label>
+        Title
+      </label>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        title="title"
+        type="text"
+        value=""
+      />
+    </center>
+    <label>
+      Notes
+    </label>
+    <textarea
+      className="form-control"
+      onChange={[Function]}
+      style={
+        Object {
+          "height": "60%",
+        }
+      }
+      title="notes"
+      type="text"
+      value=""
+    />
+    <button
+      className="btn btn-success"
+    >
+      Add Note
+    </button>
+  </div>
+  <div
+    class="textarea-group mb-3"
+  />
+</form>
+`;

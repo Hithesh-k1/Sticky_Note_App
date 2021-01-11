@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Oregano&display=swap");
+
+input[type="text"],
+input[type="text"]:focus {
+  background: transparent;
+  border: none;
+  outline-width: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.parent {
+  display: grid;
+  grid-template-columns: 1fr 0.2fr;
+  grid-template-rows: 0.2fr 1fr 0.3fr;
+  grid-column-gap: 7px;
+  grid-row-gap: 11px;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  grid-area: 1 / 1 / 2 / 3;
+  /* font-family: 'Covered By Your Grace', cursive; */
+font-family: 'Oregano', cursive;
+}
+.content {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.add-notes {
+  grid-area: 2 / 1 / 4 / 3;
 }

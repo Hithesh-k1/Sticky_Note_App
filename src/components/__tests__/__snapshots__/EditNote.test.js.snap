@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should match snapshot of EditNote Component 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="note"
+  >
+    <center>
+      <label>
+        Title
+      </label>
+      <input
+        onChange={[Function]}
+        title="title"
+        type="text"
+      />
+    </center>
+    <label>
+      Note
+    </label>
+    <input
+      onChange={[Function]}
+      title="notes"
+      type="text"
+    />
+    <button>
+      Update note
+    </button>
+    <button
+      className="button muted-button"
+      onClick={[Function]}
+    >
+      Cancel
+    </button>
+  </div>
+</form>
+`;

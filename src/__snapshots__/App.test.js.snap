@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should match snapshot of App Component 1`] = `
+<div
+  className="parent"
+>
+  <div>
+    <h1
+      className="header"
+    >
+      Sticky-notes
+    </h1>
+  </div>
+  <div
+    className="content"
+  >
+    <h2>
+      Add Note
+    </h2>
+    <AddNote
+      addNote={[Function]}
+    />
+  </div>
+  <div
+    className="add-notes"
+  >
+    <div
+      className="container"
+    >
+      <Notes
+        deleteNote={[Function]}
+        editRow={[Function]}
+        notes={
+          Array [
+            Object {
+              "id": 1,
+              "notes": "build CI/CD pipeline using jenkins",
+              "title": "Todo 1",
+            },
+            Object {
+              "id": 2,
+              "notes": "Integrate Jenkins with Sonarqube ",
+              "title": "Todo 2",
+            },
+            Object {
+              "id": 3,
+              "notes": "Deploy to AWS S3",
+              "title": "Todo 3",
+            },
+          ]
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
