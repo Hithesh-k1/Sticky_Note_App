@@ -5,8 +5,7 @@ import Notes from "./components/Notes";
 import "./App.css";
 
 const App = () => {
-  // Data
-  const usersData = [
+  const initialData = [
     { id: 1, title: "Todo 1", notes: "build CI/CD pipeline using jenkins" },
     { id: 2, title: "Todo 2", notes: "Integrate Jenkins with Sonarqube " },
     { id: 3, title: "Todo 3", notes: "Deploy to AWS S3" },
@@ -14,7 +13,7 @@ const App = () => {
 
   const initialFormState = { id: null, title: "", notes: "" };
 
-  const [notes, setNotes] = useState(usersData);
+  const [notes, setNotes] = useState(initialData);
   const [currentNote, setCurrentNote] = useState(initialFormState);
   const [editing, setEditing] = useState(false);
 
@@ -29,11 +28,12 @@ const App = () => {
     setNotes(notes.filter((note) => note.id !== id));
   };
 
-  const updateNote = (id, updatedUser) => {
-    setEditing(false);
-
-    setNotes(notes.map((note) => (note.id === id ? updatedUser : note)));
-  };
+  const updateNote =
+    /* istanbul ignore next */
+    (id, updatedUser) => {
+      setEditing(false);
+      setNotes(notes.map((note) => (note.id === id ? updatedUser : note)));
+    };
 
   const editRow = (note) => {
     setEditing(true);
@@ -41,39 +41,36 @@ const App = () => {
     setCurrentNote({ id: note.id, title: note.title, notes: note.notes });
   };
 
-  console.log(editing,"--------------------")
   return (
-
-    <div className='parent' >
+    <div className="parent">
       <div>
-        <h1 className='header'>Sticky-notes</h1>
+        <h1 className="header">Sticky-notes</h1>
       </div>
-        <div className='content' >
-          {editing ? (
-            <Fragment>
-              <h2>Edit note</h2>
+      <div className="content">
+        {editing ? (
+          <Fragment>
+            <h2>Edit note</h2>
 
-              <EditNote
-                editing={editing}
-                setEditing={setEditing}
-                currentNote={currentNote}
-                updateNote={updateNote}
-              />
-            </Fragment>
-          ) : (
-            <Fragment>
-              <h2>Add Note</h2>
+            <EditNote
+              editing={editing}
+              setEditing={setEditing}
+              currentNote={currentNote}
+              updateNote={updateNote}
+            />
+          </Fragment>
+        ) : (
+          <Fragment>
+            <h2>Add Note</h2>
 
-              <AddNote addNote={addNote} />
-            </Fragment>
-          )}
-        </div>
-        <div className='add-notes'>
-
+            <AddNote addNote={addNote} />
+          </Fragment>
+        )}
+      </div>
+      <div className="add-notes">
         <div className="container">
           <Notes notes={notes} editRow={editRow} deleteNote={deleteNote} />
         </div>
-        </div>
+      </div>
     </div>
   );
 };

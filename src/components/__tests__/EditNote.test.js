@@ -23,7 +23,8 @@ describe("App component", () => {
       setEditing: jest.fn(),
       currentNote: usersData,
       updateNote: jest.fn(),
-      handleInputChange:jest.fn()
+      handleInputChange:jest.fn(),
+      setNote:jest.fn()
     };
 
     wrappedComponent = setUp(props);
@@ -56,4 +57,13 @@ describe("App component", () => {
 
     // expect(props.handleInputChange).toHaveBeenCalled();
   });
+
+  it("should handle useEffect event", () => {
+    wrappedComponent.setProps({ note:props.currentNote});
+
+    // wrappedComponent.find("form").props().onSubmit(event);
+    // expect(props.setNote).toHaveBeenCalled();
+  });
+  // component.setProps({ questions: { status: "not new" } });
+
 });

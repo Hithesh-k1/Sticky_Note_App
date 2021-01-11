@@ -3,9 +3,13 @@ import React, { useState, useEffect } from "react";
 const EditNote = (props) => {
   const [note, setNote] = useState(props.currentNote);
 
-  useEffect(() => {
-    setNote(props.currentNote);
-  }, [props]);
+  useEffect(
+    /* istanbul ignore next */
+    () => {
+      setNote(props.currentNote);
+    },
+    [props]
+  );
   // You can tell React to skip applying an effect if certain values haven’t changed between re-renders. [ props ]
 
   const handleInputChange = (event) => {
@@ -46,11 +50,11 @@ const EditNote = (props) => {
           <textarea
             id="floatingTextarea"
             placeholder="Note.."
-          className="form-control"
-          type="text"
-          title="notes"
-          value={note.notes}
-          onChange={handleInputChange}
+            className="form-control"
+            type="text"
+            title="notes"
+            value={note.notes}
+            onChange={handleInputChange}
           ></textarea>
           {/* <label for="floatingTextarea">Comments</label> */}
         </div>
