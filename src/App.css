@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Oregano&display=swap");
 
-input[type="text"],
+/* input[type="text"],
 input[type="text"]:focus {
   background: transparent;
   border: none;
   outline-width: 0;
-}
+} */
 
 .container {
   display: flex;

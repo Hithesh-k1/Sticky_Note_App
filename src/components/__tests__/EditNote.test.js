@@ -44,16 +44,16 @@ describe("App component", () => {
     expect(props.updateNote).toHaveBeenCalled();
   });
 
-  // it("should handleInputChange event", () => {
-  //   const event = {
-  //     target: {
-  //       title: "test_title",
-  //       value: "test_value",
-  //     },
-  //   };
-  //   wrappedComponent.find("input").at(0).props().onChange(event);
-  //   expect(wrappedComponent.instance().state.title).toEqual("test_title");
+  it("should handleInputChange event", () => {
+    const event = {
+      target: {
+        title: "test_title",
+        value: "test_value",
+      },
+    };
+    wrappedComponent.find("textarea").at(0).props().onChange(event);
+    // expect(wrappedComponent.instance().state.title).toEqual("test_title");
 
-  //   // expect(props.handleInputChange).toHaveBeenCalled();
-  // });
+    // expect(props.handleInputChange).toHaveBeenCalled();
+  });
 });

@@ -1,40 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component should match snapshot of AddNote Component 1`] = `
+exports[`AddNote component should match snapshot of AddNote Component 1`] = `
 <form
   onSubmit={[Function]}
 >
   <div
-    className="note"
     key="null"
   >
     <center>
-      <label>
-        Title
-      </label>
-      <input
+      <div
+        class="form-floating"
+      >
+        <textarea
+          className="form-control"
+          id="floatingTextarea"
+          onChange={[Function]}
+          placeholder="Title.."
+          title="title"
+          type="text"
+          value=""
+        />
+      </div>
+    </center>
+    <div
+      class="form-floating"
+    >
+      <textarea
         className="form-control"
+        id="floatingTextarea"
         onChange={[Function]}
-        title="title"
+        placeholder="Notes.."
+        title="notes"
         type="text"
         value=""
       />
-    </center>
-    <label>
-      Notes
-    </label>
-    <textarea
-      className="form-control"
-      onChange={[Function]}
-      style={
-        Object {
-          "height": "60%",
-        }
-      }
-      title="notes"
-      type="text"
-      value=""
-    />
+    </div>
     <button
       className="btn btn-success"
     >

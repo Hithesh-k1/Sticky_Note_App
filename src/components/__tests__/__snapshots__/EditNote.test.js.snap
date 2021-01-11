@@ -4,32 +4,35 @@ exports[`App component should match snapshot of EditNote Component 1`] = `
 <form
   onSubmit={[Function]}
 >
-  <div
-    className="note"
-  >
+  <div>
     <center>
-      <label>
-        Title
-      </label>
-      <input
+      <textarea
+        className="form-control"
         onChange={[Function]}
+        placeholder="title.."
         title="title"
         type="text"
       />
     </center>
-    <label>
-      Note
-    </label>
-    <input
-      onChange={[Function]}
-      title="notes"
-      type="text"
-    />
-    <button>
+    <div
+      class="form-floating"
+    >
+      <textarea
+        className="form-control"
+        id="floatingTextarea"
+        onChange={[Function]}
+        placeholder="Note.."
+        title="notes"
+        type="text"
+      />
+    </div>
+    <button
+      className="btn btn-primary"
+    >
       Update note
     </button>
     <button
-      className="button muted-button"
+      className="btn btn-danger"
       onClick={[Function]}
     >
       Cancel

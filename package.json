@@ -46,23 +46,8 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "collectCoverageFrom": [
-      "**/*.{js,jsx}",
-      "!coverage/**",
-      "!node_modules/**",
-      "!src/index.js",
-      "!src/setupTests.js",
-      "!public/**",
-      "!build/**"
-    ],
-    "coverageReporters": [
-      "text",
-      "lcov",
-      "json",
-      "text",
-      "clover",
-      "cobertura"
-    ],
+
+ 
     "coveragePathIgnorePatterns": [
       "node_modules",
       "<rootDir>/src/reportWebVitals.js"

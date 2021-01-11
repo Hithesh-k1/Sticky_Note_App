@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
-import AddNotes from "./components/AddNote";
-import EditNotes from "./components/EditNote";
+import AddNote from "./components/AddNote";
+import EditNote from "./components/EditNote";
 import Notes from "./components/Notes";
 import "./App.css";
 
@@ -41,6 +41,7 @@ const App = () => {
     setCurrentNote({ id: note.id, title: note.title, notes: note.notes });
   };
 
+  console.log(editing,"--------------------")
   return (
 
     <div className='parent' >
@@ -52,7 +53,7 @@ const App = () => {
             <Fragment>
               <h2>Edit note</h2>
 
-              <EditNotes
+              <EditNote
                 editing={editing}
                 setEditing={setEditing}
                 currentNote={currentNote}
@@ -63,7 +64,7 @@ const App = () => {
             <Fragment>
               <h2>Add Note</h2>
 
-              <AddNotes addNote={addNote} />
+              <AddNote addNote={addNote} />
             </Fragment>
           )}
         </div>

@@ -14,35 +14,61 @@ export const AddNote = (props) => {
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        if (!note.title || !note.notes) return;
+        // if (!note.title || !note.notes) return;
 
         props.addNote(note);
         setNote(initialFormState);
       }}
     >
-      <div className="note" key={note.id}>
+      <div key={note.id}>
         <center>
-          <label>Title</label>
+          {/* <label>Title</label> */}
 
-          <input
+          {/* <textarea
             className="form-control"
             type="text"
             title="title"
             value={note.title}
             onChange={handleInputChange}
-          />
+          /> */}
+          <div class="form-floating">
+            <textarea
+              id="floatingTextarea"
+              placeholder="Title.."
+              className="form-control"
+              type="text"
+              title="title"
+              value={note.title}
+              onChange={handleInputChange}
+            ></textarea>
+            {/* <label for="floatingTextarea">Comments</label> */}
+          </div>
         </center>
-        <label>Notes</label>
+        {/* <label>Notes</label> */}
 
-        <textarea
-        style={{height:'60%'}}
+        {/* <textarea
+          style={{ height: "60%" }}
           className="form-control"
           type="text"
           title="notes"
           value={note.notes}
           onChange={handleInputChange}
-        />
-        <button className="btn btn-success" >Add Note</button>
+        /> */}
+
+<div class="form-floating">
+            <textarea
+              id="floatingTextarea"
+              className="form-control"
+              placeholder="Notes.."
+
+          type="text"
+          title="notes"
+          value={note.notes}
+          onChange={handleInputChange}
+            ></textarea>
+            {/* <label for="floatingTextarea">Comments</label> */}
+          </div>
+        <button className="btn btn-success">Add Note</button>
       </div>
       <div class="textarea-group mb-3"></div>
     </form>

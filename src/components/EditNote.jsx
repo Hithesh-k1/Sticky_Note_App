@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 const EditNote = (props) => {
-
   const [note, setNote] = useState(props.currentNote);
 
   useEffect(() => {
@@ -23,28 +22,43 @@ const EditNote = (props) => {
         props.updateNote(note.id, note);
       }}
     >
-      <div className="note" key={note.id}>
+      <div key={note.id}>
         <center>
-          <label>Title</label>
-          <input
+          <textarea
+            placeholder="title.."
+            className="form-control"
             type="text"
             title="title"
             value={note.title}
             onChange={handleInputChange}
           />
         </center>
-        <label>Note</label>
-        <input
+        {/* <textarea
+          placeholder="Note.."
+          className="form-control"
           type="text"
           title="notes"
           value={note.notes}
           onChange={handleInputChange}
-        />
+        /> */}
 
-        <button>Update note</button>
+        <div class="form-floating">
+          <textarea
+            id="floatingTextarea"
+            placeholder="Note.."
+          className="form-control"
+          type="text"
+          title="notes"
+          value={note.notes}
+          onChange={handleInputChange}
+          ></textarea>
+          {/* <label for="floatingTextarea">Comments</label> */}
+        </div>
+
+        <button className="btn btn-primary">Update note</button>
         <button
           onClick={() => props.setEditing(false)}
-          className="button muted-button"
+          className="btn btn-danger"
         >
           Cancel
         </button>
