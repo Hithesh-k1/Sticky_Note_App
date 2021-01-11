@@ -41,5 +41,6 @@ describe("AddNote component", () => {
     };
     wrappedComponent.find("textarea").at(0).props().onChange(event);
     // expect(props.setNote).toHaveBeenCalled();
+    
   });
 });
