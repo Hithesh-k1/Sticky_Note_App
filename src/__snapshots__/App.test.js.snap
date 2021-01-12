@@ -20,7 +20,9 @@ exports[`App component should match snapshot of App Component 1`] = `
     <AddNote
       addNote={[Function]}
     />
-    <p />
+    <p>
+      PRODUCTION
+    </p>
   </div>
   <div
     className="add-notes"
