@@ -35,7 +35,7 @@ pipeline {
             }
         }
 
-        stage('Upload to aws S3') {
+        stage('Upload to AWS S3') {
             steps {
                 echo 'Uploading...'
                 dir('/home/nineleaps/.jenkins/workspace/Sticky_Note_App/') {
