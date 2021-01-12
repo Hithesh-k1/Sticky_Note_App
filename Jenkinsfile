@@ -13,7 +13,7 @@ pipeline {
                 sh 'npm run test:coverage'
             }
         }
-        stage('Sonarqube') {
+        stage('Sonarqube-Quality_Gate') {
             environment {
                 scannerHome = tool 'sonar_scanner'
             }
@@ -23,9 +23,9 @@ pipeline {
                 withSonarQubeEnv('Sonarqube') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
-                // timeout(time: 10, unit: 'MINUTES') {
-                //     waitForQualityGate abortPipeline: true
-                // }
+                timeout(time: 10, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
             }
         }
         stage('Build') {
@@ -35,7 +35,7 @@ pipeline {
             }
         }
 
-        stage('Upload') {
+        stage('Upload to aws S3') {
             steps {
                 echo 'Uploading...'
                 dir('/home/nineleaps/.jenkins/workspace/Sticky_Note_App/') {
