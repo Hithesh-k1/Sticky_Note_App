@@ -63,6 +63,7 @@ const App = () => {
             <h2>Add Note</h2>
 
             <AddNote addNote={addNote} />
+            
             <p>{process.env.REACT_APP_ENV}</p>
           </Fragment>
         )}
