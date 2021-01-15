@@ -78,8 +78,16 @@ div.note > textarea {
     background: rgba(255, 255, 255, .5);
 }
 
-.glyphicon-plus {
-    position: fixed;
-    top: 10px;
-    right: 10px;
+
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  [contenteditable]:empty:before {
+    content: attr(data-placeholder);
+    color: grey;
+    display: inline-block;
 }
